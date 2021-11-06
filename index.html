@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/shopping-cart-32.png">
+  <title>E-commerce product page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <header>
+      <div class="menu">
+        <button class="menu-mobile-btn"><img src="./images/icon-menu.svg" alt="menu"></button>
+        <img src="./images/logo.svg" alt="logo">
+        <ul class="menu-desktop">
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Men</a></li>
+          <li><a href="#">Women</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="cart-avatar">
+        <div class="cart-div">
+          <button class="cart-btn"><img src="./images/icon-cart.svg" alt="cart"></button>
+          <p class="cart-num">0</p>
+        </div>
+        <img class="avatar" src="./images/image-avatar.png" alt="avatar">
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="mobile-gallery">
+        <img class="mobile-img show-mobile-img" src="./images/image-product-1.jpg" alt="product-1">
+        <img class="mobile-img" src="./images/image-product-2.jpg" alt="product-2">
+        <img class="mobile-img" src="./images/image-product-3.jpg" alt="product-3">
+        <img class="mobile-img" src="./images/image-product-4.jpg" alt="product-4">
+        <button class="slider-btn prev">
+          <div></div>
+        </button>
+        <button class="slider-btn next">
+          <div></div>
+        </button>
+      </div>
+
+      <div class="desktop-img">
+        <button class="large-img"><img src="./images/image-product-1.jpg" alt="product-1"></button>
+        <div class="small-img">
+          <input type="radio" name="thumbnail" id="product-1" checked>
+          <label for="product-1"><img src="./images/image-product-1-thumbnail.jpg" alt="product-1"></label>
+          <input type="radio" name="thumbnail" id="product-2">
+          <label for="product-2"><img src="./images/image-product-2-thumbnail.jpg" alt="product-2"></label>
+          <input type="radio" name="thumbnail" id="product-3">
+          <label for="product-3"><img src="./images/image-product-3-thumbnail.jpg" alt="product-3"></label>
+          <input type="radio" name="thumbnail" id="product-4">
+          <label for="product-4"><img src="./images/image-product-4-thumbnail.jpg" alt="product-4"></label>
+        </div>
+      </div>
+
+      <div class="info">
+        <p class="company">Sneaker Company</p>
+        <h1 class="product">Fall Limited Edition Sneakers</h1>
+        <p class="description">These low-profile sneakers are your perfect casual wear companion. Featuring a
+          durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+        <div class="price">
+          <div class="price-discounted">
+            <p>$125.00</p>
+            <p>50%</p>
+          </div>
+          <p class="price-ori">$250.00</p>
+        </div>
+        <div class="quantity-cart">
+          <div class="quantity-div">
+            <button class="minus-btn"><img src="./images/icon-minus.svg" alt="icon-minus"></button>
+            <p class="quantity">0</p>
+            <button class="plus-btn"><img src="./images/icon-plus.svg" alt="icon-plus"></button>
+          </div>
+          <button class="add-cart-btn">
+            <div></div>Add to cart
+          </button>
+        </div>
+      </div>
+
+      <div class="cart">
+        <div class="cart-header">
+          <p>Cart</p>
+        </div>
+        <div class="cart-content full">
+          <div class="cart-info">
+            <img src="./images/image-product-1-thumbnail.jpg" alt="product-1">
+            <div>
+              <p class="cart-product">Autumn Limited Edition...</p>
+              <p class="cart-quantity">$125.00 x <span class="num">0</span> <span class="total">$0.00</span></p>
+            </div>
+            <button class="delete-btn"><img src="./images/icon-delete.svg" alt="icon-delete"></button>
+          </div>
+          <button class="checkout-btn">Checkout</button>
+        </div>
+        <div class="cart-content empty">
+          <p>Your cart is empty.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="attribution">
+      Coded by <a href="https://github.com/mathew12tan?tab=repositories">Mathew</a>
+    </div>
+
+    <div class="menu-mobile-modal-container">
+      <div class="menu-mobile-modal">
+        <button class="mobile-menu-close-btn"><img src="./images/icon-close.svg" alt="icon-close"></button>
+        <ul class="menu-mobile">
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Men</a></li>
+          <li><a href="#">Women</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </main>
+
+  <div class="lightbox-container">
+    <div class="lightbox">
+      <button class="lightbox-close-btn">
+        <div></div>
+      </button>
+      <div class="lightbox-slider">
+        <div class="lightbox-slider-img">
+          <img class="lightbox-img" src="./images/image-product-1.jpg" alt="product-1">
+          <img class="lightbox-img" src="./images/image-product-2.jpg" alt="product-2">
+          <img class="lightbox-img" src="./images/image-product-3.jpg" alt="product-3">
+          <img class="lightbox-img" src="./images/image-product-4.jpg" alt="product-4">
+        </div>
+        <button class="slider-btn prev" id="prev-btn">
+          <div></div>
+        </button>
+        <button class="slider-btn next" id="next-btn">
+          <div></div>
+        </button>
+      </div>
+      <div class="lightbox-small-img">
+        <input type="radio" name="lightbox-thumbnail" id="pd-1">
+        <label for="pd-1"><img src="./images/image-product-1-thumbnail.jpg" alt="product-1"></label>
+        <input type="radio" name="lightbox-thumbnail" id="pd-2">
+        <label for="pd-2"><img src="./images/image-product-2-thumbnail.jpg" alt="product-2"></label>
+        <input type="radio" name="lightbox-thumbnail" id="pd-3">
+        <label for="pd-3"><img src="./images/image-product-3-thumbnail.jpg" alt="product-3"></label>
+        <input type="radio" name="lightbox-thumbnail" id="pd-4">
+        <label for="pd-4"><img src="./images/image-product-4-thumbnail.jpg" alt="product-4"></label>
+      </div>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+
+</html>
