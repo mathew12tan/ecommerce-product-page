@@ -62,69 +62,64 @@ const lightboxImg = document.querySelector(".lightbox-img");
 const closeLightboxBtn = document.querySelector(".lightbox-close-btn");
 const lightboxImgs = document.querySelectorAll(".lightbox-img");
 const lightboxThumbNails = document.querySelectorAll(`input[name="lightbox-thumbnail"]`);
+const lightboxPrevBtn = document.querySelector("#prev-btn");
+const lightboxNextBtn = document.querySelector("#next-btn");
+
 let lightboxIndex;
 
 largeImg.addEventListener("click", function () {
     lightbox.style.visibility = "visible";
-
-    thumbNails.forEach(thumbNail => {
-        if (thumbNail.checked === true) {
-            lightboxIndex = thumbNail.id.slice(-1) - 1;
-        }
-    });
+    lightboxIndex = parseInt(largeImg.children[0].alt.slice(-1) - 1);
 
     lightboxImgs.forEach((lightboxImg, index) => {
         if (lightboxIndex === index) {
             lightboxImg.classList.add("show-lightbox-img");
         }
     });
-
-    const prevBtn = document.querySelector("#prev-btn");
-    const nextBtn = document.querySelector("#next-btn");
-
-    function lightboxSlider() {
-        lightboxImgs.forEach((lightboxImg, index) => {
-            lightboxImg.classList.remove("show-lightbox-img");
-            if (lightboxIndex === index) {
-                lightboxImg.classList.add("show-lightbox-img");
-            }
-        });
-        lightboxThumbNails.forEach((lightboxThumbNail, index) => {
-            if (lightboxIndex === index) {
-                lightboxThumbNail.checked = true;
-            }
-        });
-    }
-
-    prevBtn.addEventListener("click", function () {
-        lightboxIndex--;
-        if (lightboxIndex < 0) {
-            lightboxIndex = 0;
+    lightboxThumbNails.forEach((lightboxThumbNail, index) => {
+        if (lightboxIndex === index) {
+            lightboxThumbNail.checked = true;
         }
-        lightboxSlider();
-    })
+    });
+})
 
-    nextBtn.addEventListener("click", function () {
-        lightboxIndex++;
-        if (lightboxIndex > lightboxImgs.length - 1) {
-            lightboxIndex = lightboxImgs.length - 1;
+function lightboxSlider() {
+    lightboxImgs.forEach((lightboxImg, index) => {
+        lightboxImg.classList.remove("show-lightbox-img");
+        if (lightboxIndex === index) {
+            lightboxImg.classList.add("show-lightbox-img");
         }
-        lightboxSlider();
-    })
+    });
 
     lightboxThumbNails.forEach((lightboxThumbNail, index) => {
         if (lightboxIndex === index) {
             lightboxThumbNail.checked = true;
         }
     });
+}
 
-    lightboxThumbNails.forEach(lightboxThumbNail => {
-        lightboxThumbNail.addEventListener("change", function () {
-            lightboxIndex = parseInt(lightboxThumbNail.id.slice(-1)) - 1;
-            lightboxSlider();
-        })
-    });
+lightboxPrevBtn.addEventListener("click", function () {
+    lightboxIndex--;
+    if (lightboxIndex < 0) {
+        lightboxIndex = 0;
+    }
+    lightboxSlider();
 })
+
+lightboxNextBtn.addEventListener("click", function () {
+    lightboxIndex++;
+    if (lightboxIndex > lightboxImgs.length - 1) {
+        lightboxIndex = lightboxImgs.length - 1;
+    }
+    lightboxSlider();
+})
+
+lightboxThumbNails.forEach((lightboxThumbNail) => {
+    lightboxThumbNail.addEventListener("change", function () {
+        lightboxIndex = parseInt(lightboxThumbNail.id.slice(-1)) - 1;
+        lightboxSlider();
+    })
+});
 
 closeLightboxBtn.addEventListener("click", function () {
     lightbox.style.visibility = "hidden";
